@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int num1, num2;
+	int mayor, menor;
+	string igual;
+	
+	cout << "Ingrese dos numeros entre 100 y 200." << endl;
+	cout << "Ingrese su primer numero: ";
+	cin >> num1;
+	while(num1 < 100 or num1 > 200){
+		cout << "Error, verifique que su numero este entre 100 y 200."<< endl;
+		cout << "Ingrese su primer numero: ";
+		cin >> num1;
+	}
+	cout << "Ingrese su segundo numero: ";
+	cin >> num2;
+	while(num2 < 100 or num2 > 200){
+		cout << "Error, verifique que su numero este entre 100 y 200."<< endl;
+		cout << "Ingrese su segundo numero: ";
+		cin >> num2;
+	}
+	
+	if(num1 == num2){
+		igual = "iguales";
+		cout << "Los numeros son: "<< igual << endl;
+	}else if(num1 > num2){
+		mayor=num1;
+		menor=num2;
+		cout << "El mayor es: "<< mayor << endl;
+		cout << "El menor es: "<< menor << endl;
+	}else if(num2 > num1){
+		mayor=num2;
+		menor=num1;
+		cout << "El mayor es: "<< mayor << endl;
+		cout << "El menor es: "<< menor << endl;
+	}
+	return 0;
+}
