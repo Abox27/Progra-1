@@ -1,0 +1,281 @@
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	//DEFINIR VARIABLES
+	//Datos del cliente
+	string nombre;
+	int edad, tipoCliente, genero;
+	
+	//datos del menu
+	int area;
+	int codigoProd, resp, dia, queso, quesillo;
+	
+	//area verduras
+	int lbrTomates, lbrRepollos, LbrPapas, resp2;
+	double subtTomates, acumSubtTomates;
+	double subtRepollos, acumSubtRepollos; 
+	double subtPapas, acumSubtPapas;
+	//area de carnes
+	
+	//area de lacteos
+	
+	
+	//ENTRADAS DATOS DEL CLIENTE
+	/*
+	cout<<"+++++++++++++++++++++++++++++"<<endl;
+	cout<<"+++++ SUPERMERCADO PUMA ++++++"<<endl;
+	cout<<"+++++++++++++++++++++++++++++"<<endl;
+	cout<<" Nombre completo  ";
+	cin>>nombre;
+	cout<<" edad  ";
+	cin>>edad;
+	
+	while ( edad < 18 or edad >100 ){
+	cout<<"ERROR, Edad fuera de rango ";
+	cout<<" edad  ";
+	cin>>edad;
+	}
+	
+	//SOLICITAR DATOS DEL GENERO
+	cout<<" Genero (1: Masculino   -   2: Femenino)  ";
+	cin>>genero;
+	
+	while ( genero < 1 or genero >2 ){
+	cout<<"ERROR, GENERO fuera de rango "<<endl;
+	cout<<" Genero (1: Masculino   -   2: Femenino)  ";
+	cin>>genero;
+	}
+	
+	//SOLICITAR DATOS DEL TIPO DE CLIENTE
+	cout<<"             TIPO DE CLIENTE         "<<endl;
+	cout<<" 1 - Cliente ESTRELLA    =  4% Descuento en Area de Verduras y Carnes "<<endl;
+	cout<<" 2 - Cliente REGULAR     =  3% Descuento en Area de Carnes "<<endl;
+	cout<<" 3 - Cliente NUEVO       =  2% Descuento en Area de Licores "<<endl;
+	cin>>tipoCliente;
+	
+	while ( tipoCliente < 1 or tipoCliente >3 ){
+	cout<<"ERROR, tipo de cliente fuera de rango ";
+	cout<<"             TIPO DE CLIENTE         "<<endl;
+	cout<<" 1 - Cliente ESTRELLA    =  4% Descuento en Area de Verduras y Carnes "<<endl;
+	cout<<" 2 - Cliente REGULAR     =  3% Descuento en Area de Carnes "<<endl;
+	cout<<" 3 - Cliente NUEVO       =  2% Descuento en Area de Licores "<<endl;
+	cin>>tipoCliente;
+	}
+	
+	system ("pause");
+	system ("cls");
+	
+	//SOLICITAR EL DIA DE LA SEMANA
+	cout<<"             SELECCIONE EL DIA DE LA SEMANA        "<<endl;
+	cout<<"                        1 LUNES "<<endl;
+	cout<<"                        2 MARTES "<<endl;
+	cout<<"                        3 MIERCOLES "<<endl;
+	cout<<"                        4 JUEVES "<<endl;
+	cout<<"                        5 VIERNES "<<endl;
+	cout<<"                        6 SABADO "<<endl;
+	cout<<"                        7 DOMINGO "<<endl;
+	cin>>dia;
+	while ( dia < 1 or dia >7){
+	cout<<"ERROR, dia fuera de rango ";
+	cout<<"             SELECCIONE EL DIA DE LA SEMANA        "<<endl;
+	cout<<"                        1 LUNES "<<endl;
+	cout<<"                        2 MARTES "<<endl;
+	cout<<"                        3 MIERCOLES "<<endl;
+	cout<<"                        4 JUEVES "<<endl;
+	cout<<"                        5 VIERNES "<<endl;
+	cout<<"                        6 SABADO "<<endl;
+	cout<<"                        7 DOMINGO "<<endl;
+	cin>>dia;
+	}
+	
+	*/
+	
+	system ("pause");
+	system ("cls");
+	
+	
+	do {
+		cout<<"+++++++++++++++++++++++++++++"<<endl;
+		cout<<"+++++ SUPERMERCADO PUMA ++++++"<<endl;
+		cout<<"+++ 1  Area de verduras  ++++++++++"<<endl;
+		cout<<"+++ 2 - Area de Carnes (PDF)    ++++++++++"<<endl;
+		cout<<"+++ 3 -Area de Lacteos (Daniel) ++++++++++"<<endl;
+		cout<<"+++ 4 - Carrito de compras (Clase)  ++++++++++"<<endl;
+		cout<<"+++ 5 - Salir               ++++++++++"<<endl;
+		cout<<"+++++++++++++++++++++++++++++"<<endl;
+		cin>>area;	
+		
+		//se puede validar la opcion del area aca...
+		
+		
+		switch (area) {
+			
+			
+			do {
+			case 1:
+				cout<<"+++ V -v - Area de verduras  ++++++++++"<<endl;
+				cout<<" 1. TOMATES   L. 10 X libra  "<<endl;
+				cout<<" 2. REPOLLOS  L. 15 X libra  "<<endl;
+				cout<<" 3. PAPAS     L. 17 X libra  "<<endl;
+				cout<<" 4. Regrsar al menu principal"<<endl;
+				cin>>resp;
+				
+				
+				while (resp <1 or resp>4 ){
+					cout<<" ERROR, opciones fuera de rango"<<endl;
+					
+					cout<<"+++ V -v - Area de verduras  ++++++++++"<<endl;
+					cout<<" 1. TOMATES   L. 10 X libra  "<<endl;
+					cout<<" 2. REPOLLOS  L. 15 X libra  "<<endl;
+					cout<<" 3. PAPAS     L. 17 X libra  "<<endl;
+					cout<<" 4. Regrsar al menu principal"<<endl;
+					cin>>resp;
+					
+					
+				}
+				
+				switch (resp) {
+				case 1:
+					
+					do {
+						
+						
+						cout<<" ==== TOMATES ==== "<<endl;
+						cout<<" Ingrese la libras ";
+						cin>>lbrTomates;
+						
+						//Proceso
+						subtTomates = lbrTomates * 10;
+						cout<<" Subtotal L. "<<subtTomates<<endl;
+						//ACUMULADOR DE TOMATES
+						acumSubtTomates = acumSubtTomates + subtTomates;
+						
+						cout<<" Total en tomates. L. "<<acumSubtTomates<<endl;
+						
+						cout<<" Desea comprar mas tomates  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
+					
+					
+					
+					break;
+				case 2:
+					do {
+						
+						
+						cout<<" ==== Repollos ==== "<<endl;
+						cout<<" Ingrese la libras: ";
+						cin>>lbrRepollos;
+						
+						//Proceso
+						subtRepollos = lbrRepollos * 15;
+						cout<<" Subtotal L. "<<subtRepollos<<endl;
+						//ACUMULADOR DE repollos
+						acumSubtRepollos = acumSubtRepollos + subtRepollos;
+						
+						cout<<" Total en repollos. L. "<<acumSubtRepollos<<endl;
+						
+						cout<<" Desea comprar mas repollos  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
+					
+					
+					break;
+					
+				case 3:
+					do {
+						
+						
+						cout<<" ==== Papas ==== "<<endl;
+						cout<<" Ingrese la libras: ";
+						cin>>LbrPapas;
+						
+						//Proceso
+						subtPapas = LbrPapas * 15;
+						cout<<" Subtotal L. "<<subtPapas<<endl;
+						//ACUMULADOR DE repollos
+						acumSubtPapas = acumSubtPapas + subtPapas;
+						
+						cout<<" Total en papas. L. "<<acumSubtPapas<<endl;
+						
+						cout<<" Desea comprar mas papas  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
+					break;
+					
+				case 4:
+					cout<<" regresando... "<<endl;
+					system ("pause");
+					system ("cls");
+					
+					break;
+					
+				default:
+					cout<<" Error, ella no te quiere!.... "<<endl;
+				};
+				
+			} while (  resp != 4 );
+			
+			
+			break;
+		case 2 :
+			cout<<"+++ C -c - Area de Carnes    ++++++++++"<<endl;
+			
+			
+			cout<<" 1. comprar en esta area   -   2. Regresar    "<<endl;
+			cin>>resp;
+			
+			//Validar el ingreso de la respuesta 1 o 2 ...
+			
+			
+			do {
+				switch (resp) {
+				case 1:
+					
+					//efectiar aca las operaciones de compra...
+					cout<<" comprando... "<<endl;
+					
+					break;
+				case 2:
+					cout<<" Regresando... "<<endl;
+					
+					system ("pause");
+					system ("cls");
+					
+					break;
+					
+				default:
+					cout<<" Error, ella no te quiere!.... "<<endl;
+				};
+				
+			} while (  resp != 4 );
+			
+			
+			
+			
+			break;
+		case 3:
+			cout<<"+++ C -c - Area de Lacteos    ++++++++++"<<endl;
+			break;
+			
+		case 4:
+			cout<<"+++ C -c - Carrito compras    ++++++++++"<<endl;
+			
+			//opciones de ver los productos y facturar
+			
+			break;	
+		default:
+			cout<<"ERROR, OPCION INCORRECTA"<<endl;
+		};
+		
+		
+	} while (  area < 5 );
+	
+	
+	
+	return 0;
+}
