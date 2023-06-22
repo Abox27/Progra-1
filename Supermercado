@@ -4,28 +4,41 @@ using namespace std;
 int main(int argc, char *argv[]) {
 	//DEFINIR VARIABLES
 	//Datos del cliente
-	string nombre;
 	int edad, tipoCliente, genero;
-	
+	int metodo_pago;
+	float tipoCliente_descuento, descuento_edad, descuento_dia, total_pagar, total_ant_impuesto, impuesto;
+	string nombre, cliente_estrella, dia_dia, metodo_pago_string, descuento_dia_categoria;
 	//datos del menu
 	int area;
 	int codigoProd, resp, dia;
 	
 	//area verduras
 	int lbrTomates, lbrRepollos, LbrPapas, resp2;
-	double subtTomates, acumSubtTomates;
-	double subtRepollos, acumSubtRepollos; 
+	double subtTomates, acumSubtTomates=0;
+	double acumCantidadTomates=0;
+	double subtRepollos, acumSubtRepollos=0;
+	double acumCantidadRepollos=0;
 	double subtPapas, acumSubtPapas;
+	double acumCantidadPapas=0;
 	//area de carnes
 	int lbrCerdo, lbrPollo, lbrRes;
-	double subtCerdo, acumSubtCerdo;
-	double subtPollo, acumSubtPollo;
+	double subtCerdo, acumSubtCerdo=0;
+	double acumCantidadCerdo=0;
+	double subtPollo, acumSubtPollo=0;
+	double acumCantidadPollo=0;
 	double subtRes, acumSubtRes;
+	double acumCantidadRes=0;
+	
 	//area de lacteos
 	int lbrQueso, lbrQuesillo, lbrMantequilla;
-	double subtQueso, acumSubtQueso;
-	double subtQuesillo, acumSubtQuesillo;
-	double subtMantequilla, acumSubtMantequilla;
+	double subtQueso, acumSubtQueso=0;
+	double acumCantidadQueso=0;;
+	double subtQuesillo, acumSubtQuesillo=0;
+	double acumCantidadQuesillo=0;
+	double subtMantequilla, acumSubtMantequilla=0;
+	double acumCantidadMantequilla=0;
+	// carrito
+	double acumTotalgeneral;
 	
 	//ENTRADAS DATOS DEL CLIENTE
 	/*
@@ -41,6 +54,7 @@ int main(int argc, char *argv[]) {
 	cout<<"ERROR, Edad fuera de rango ";
 	cout<<" edad  ";
 	cin>>edad;
+	system ("cls");
 	}
 	
 	//SOLICITAR DATOS DEL GENERO
@@ -51,22 +65,35 @@ int main(int argc, char *argv[]) {
 	cout<<"ERROR, GENERO fuera de rango "<<endl;
 	cout<<" Genero (1: Masculino   -   2: Femenino)  ";
 	cin>>genero;
+	system ("cls");
 	}
 	
 	//SOLICITAR DATOS DEL TIPO DE CLIENTE
 	cout<<"             TIPO DE CLIENTE         "<<endl;
-	cout<<" 1 - Cliente ESTRELLA    =  4% Descuento en Area de Verduras y Carnes "<<endl;
-	cout<<" 2 - Cliente REGULAR     =  3% Descuento en Area de Carnes "<<endl;
-	cout<<" 3 - Cliente NUEVO       =  2% Descuento en Area de Licores "<<endl;
+	cout<<" 1 - Cliente ESTRELLA    =  15% Descuento"<<endl;
+	cout<<" 2 - Cliente REGULAR     =  10% Descuento"<<endl;
+	cout<<" 3 - Cliente NUEVO       =  5% Descuento"<<endl;
 	cin>>tipoCliente;
 	
 	while ( tipoCliente < 1 or tipoCliente >3 ){
 	cout<<"ERROR, tipo de cliente fuera de rango ";
 	cout<<"             TIPO DE CLIENTE         "<<endl;
-	cout<<" 1 - Cliente ESTRELLA    =  4% Descuento en Area de Verduras y Carnes "<<endl;
-	cout<<" 2 - Cliente REGULAR     =  3% Descuento en Area de Carnes "<<endl;
-	cout<<" 3 - Cliente NUEVO       =  2% Descuento en Area de Licores "<<endl;
+	cout<<" 1 - Cliente ESTRELLA    =  15% Descuento"<<endl;
+	cout<<" 2 - Cliente REGULAR     =  10% Descuento"<<endl;
+	cout<<" 3 - Cliente NUEVO       =  5% Descuento"<<endl;
 	cin>>tipoCliente;
+	
+	system ("cls");
+	}
+	if(tipoCliente == 1){
+		cliente_estrella="Estrella";
+	
+	}
+	if(tipoCliente == 2){
+		cliente_estrella="Regular";
+	}
+	if(tipoCliente == 3){
+	cliente_estrella="Nuevo";
 	}
 	
 	system ("pause");
@@ -93,9 +120,56 @@ int main(int argc, char *argv[]) {
 	cout<<"                        6 SABADO "<<endl;
 	cout<<"                        7 DOMINGO "<<endl;
 	cin>>dia;
+	system ("cls");
+	}
+	switch (dia) {
+	case 1: dia_dia = "LUNES";
+	break;
+	case 2:dia_dia = "MARTES";
+	break;
+	case 3:dia_dia = "MIERCOLES";
+	break;
+	case 4:dia_dia = "JUEVES";
+	break;
+	case 5:dia_dia = "VIERNES";
+	break;
+	case 6:dia_dia = "SABADO";
+	break;
+	case 7:dia_dia = "DOMINGO";
+	break;
+	
+	};
+	
+	if(tipoCliente == 1){
+	cliente_estrella="CLIENTE ESTRELLA";
+	}
+	if(tipoCliente == 2){
+	cliente_estrella="REGULAR";
+	}
+	if(tipoCliente == 3){
+	cliente_estrella="NUEVO";
 	}
 	
+	cout << "Forma de pago |1: Efectivo| o |2: Tarjeta|: ";
+	cin >> metodo_pago;
+	
+	while ( metodo_pago < 1 or metodo_pago > 2 ){
+	cout<<"ERROR, fuera de rango. "<<endl;
+	
+	cout << "Forma de pago |1: Efectivo| o |2: Tarjeta|: ";
+	cin >> metodo_pago;
+	
+	if(metodo_pago == 1){
+	metodo_pago_string="EFECTIVO";
+	}
+	if(metodo_pago == 2){
+	metodo_pago_string="TARJETA";
+	}
+	
+	system ("cls");
+	}
 	*/
+	
 	
 	system ("pause");
 	system ("cls");
@@ -103,14 +177,13 @@ int main(int argc, char *argv[]) {
 	
 	do {
 		cout<<"---------------------------------------------"<<endl;
-		cout<<"------------   SUPERMERCADO ISIS  -----------"<<endl;
+		cout<<"------------   SUPERMERCADO  -----------"<<endl;
 		cout<<"---------------------------------------------"<<endl;
 		cout<<""<<endl;
-		cout<<"1..........................Area de verduras"<<endl;
-		cout<<"2..........................Area de Carnes"<<endl;
-		cout<<"3..........................Area de Lacteos"<<endl;
-		cout<<"4..........................Carrito de compras"<<endl;
-		cout<<"5................................Salir"<<endl;
+		cout<<"============== |1| Area de verduras ============="<<endl;
+		cout<<"============== |2| Area de Carnes ============="<<endl;
+		cout<<"============== |3| Area de Lacteos ============="<<endl;
+		cout<<"============== |4| Revisar carrito de compras o generar factura ============="<<endl;
 		cout<<""<<endl;
 		cout<<"---------------------------------------------"<<endl;
 		cin>>area;
@@ -134,7 +207,7 @@ int main(int argc, char *argv[]) {
 				cout<<"3. PAPAS........................L. 17 X libra"<<endl;
 				cout<<"4. Regrsar al menu principal"<<endl;
 				cin>>resp;
-				
+				system ("cls");
 				
 				
 				
@@ -149,12 +222,12 @@ int main(int argc, char *argv[]) {
 					cout<<"4. Regrsar al menu principal"<<endl;
 					cin>>resp;
 					
-					
+					system ("cls");
 				}
 				
 				switch (resp) {
 				case 1:
-					
+					system ("cls");
 					do {
 						
 						
@@ -164,6 +237,8 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtTomates = lbrTomates * 10;
+						acumCantidadTomates += lbrTomates;
+						
 						cout<<" Subtotal L. "<<subtTomates<<endl;
 						//ACUMULADOR DE TOMATES
 						acumSubtTomates = acumSubtTomates + subtTomates;
@@ -172,7 +247,7 @@ int main(int argc, char *argv[]) {
 						
 						cout<<" Desea comprar mas tomates  (1 si    2 no  ) "<<endl;
 						cin>>resp2;
-						
+						system ("cls");
 					} while (resp2 == 1);
 					
 					
@@ -188,6 +263,7 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtRepollos = lbrRepollos * 15;
+						acumCantidadRepollos += lbrRepollos;
 						cout<<" Subtotal L. "<<subtRepollos<<endl;
 						//ACUMULADOR DE repollos
 						acumSubtRepollos = acumSubtRepollos + subtRepollos;
@@ -212,6 +288,7 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtPapas = LbrPapas * 15;
+						acumCantidadPapas += LbrPapas;
 						cout<<" Subtotal L. "<<subtPapas<<endl;
 						//ACUMULADOR DE repollos
 						acumSubtPapas = acumSubtPapas + subtPapas;
@@ -241,17 +318,6 @@ int main(int argc, char *argv[]) {
 			break;
 		case 2 :
 			do{
-			cout<<"+++ C - c - Area de carnes  ++++++++++"<<endl;
-			cout<<" 1. Cerdo   L. 20 X libra  "<<endl;
-			cout<<" 2. Pollo   L. 30 X libra  "<<endl;
-			cout<<" 3. Res     L. 40 X libra  "<<endl;
-			cout<<" 4. Regrsar al menu principal"<<endl;
-			cin>>resp;
-			
-			
-			while (resp <1 or resp>4 ){
-				cout<<" ERROR, opciones fuera de rango"<<endl;
-				
 				cout<<"+++ C - c - Area de carnes  ++++++++++"<<endl;
 				cout<<" 1. Cerdo   L. 20 X libra  "<<endl;
 				cout<<" 2. Pollo   L. 30 X libra  "<<endl;
@@ -260,96 +326,111 @@ int main(int argc, char *argv[]) {
 				cin>>resp;
 				
 				
-			}
-			
-			switch (resp) {
-			case 1:
+				while (resp <1 or resp>4 ){
+					cout<<" ERROR, opciones fuera de rango"<<endl;
+					
+					cout<<"+++ C - c - Area de carnes  ++++++++++"<<endl;
+					cout<<" 1. Cerdo   L. 20 X libra  "<<endl;
+					cout<<" 2. Pollo   L. 30 X libra  "<<endl;
+					cout<<" 3. Res     L. 40 X libra  "<<endl;
+					cout<<" 4. Regrsar al menu principal"<<endl;
+					cin>>resp;
+					
+					
+				}
 				
-				do {
+				switch (resp) {
+				case 1:
+					
+					do {
+						
+						
+						cout<<" ==== CERDO ==== "<<endl;
+						cout<<" Ingrese la libras ";
+						cin>>lbrCerdo;
+						
+						//Proceso
+						subtCerdo = lbrCerdo * 20;
+						acumCantidadCerdo+= lbrCerdo;
+						cout<<" Subtotal L. "<<subtCerdo<<endl;
+						
+						//ACUMULADOR DE TOMATES
+						acumSubtCerdo = acumSubtCerdo + subtCerdo;
+						
+						cout<<" Total en carnce de cerdo. L. "<<acumSubtCerdo<<endl;
+						
+						cout<<" Desea comprar mas carne de cerdo?  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
 					
 					
-					cout<<" ==== CERDO ==== "<<endl;
-					cout<<" Ingrese la libras ";
-					cin>>lbrCerdo;
 					
-					//Proceso
-					subtCerdo = lbrCerdo * 20;
-					cout<<" Subtotal L. "<<subtCerdo<<endl;
-					//ACUMULADOR DE TOMATES
-					acumSubtCerdo = acumSubtCerdo + subtCerdo;
-					
-					cout<<" Total en carnce de cerdo. L. "<<acumSubtCerdo<<endl;
-					
-					cout<<" Desea comprar mas carne de cerdo?  (1 si    2 no  ) "<<endl;
-					cin>>resp2;
-					
-				} while (resp2 == 1);
-				
-				
-				
-				break;
-			case 2:
-				do {
-					
-					
-					cout<<" ==== Pollo ==== "<<endl;
-					cout<<" Ingrese la libras: ";
-					cin>>lbrPollo;
-					
-					//Proceso
-					subtPollo = lbrPollo * 30;
-					cout<<" Subtotal L. "<<subtPollo<<endl;
-					//ACUMULADOR DE repollos
-					acumSubtPollo = acumSubtPollo + subtPollo;
-					
-					cout<<" Total en carne de pollo. L. "<<acumSubtPollo<<endl;
-					
-					cout<<" Desea comprar mas carne de pollo?  (1 si    2 no  ) "<<endl;
-					cin>>resp2;
-					
-				} while (resp2 == 1);
-				
-				
-				break;
-				
-			case 3:
-				do {
+					break;
+				case 2:
+					do {
+						
+						
+						cout<<" ==== Pollo ==== "<<endl;
+						cout<<" Ingrese la libras: ";
+						cin>>lbrPollo;
+						
+						//Proceso
+						subtPollo = lbrPollo * 30;
+						acumCantidadPollo+=lbrPollo;
+						cout<<" Subtotal L. "<<subtPollo<<endl;
+						//ACUMULADOR DE repollos
+						acumSubtPollo = acumSubtPollo + subtPollo;
+						
+						cout<<" Total en carne de pollo. L. "<<acumSubtPollo<<endl;
+						
+						cout<<" Desea comprar mas carne de pollo?  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
 					
 					
-					cout<<" ==== Res ==== "<<endl;
-					cout<<" Ingrese la libras: ";
-					cin>>lbrRes;
+					break;
 					
-					//Proceso
-					subtRes = lbrRes * 40;
-					cout<<" Subtotal L. "<<subtRes<<endl;
-					//ACUMULADOR DE repollos
-					acumSubtRes = acumSubtRes + subtRes;
+				case 3:
+					do {
+						
+						
+						cout<<" ==== Res ==== "<<endl;
+						cout<<" Ingrese la libras: ";
+						cin>>lbrRes;
+						
+						//Proceso
+						subtRes = lbrRes * 40;
+						acumCantidadRes+=lbrRes;
+						cout<<" Subtotal L. "<<subtRes<<endl;
+						//ACUMULADOR DE repollos
+						acumSubtRes = acumSubtRes + subtRes;
+						
+						cout<<" Total en papas. L. "<<acumSubtRes<<endl;
+						
+						cout<<" Desea comprar mas carne de res?  (1 si    2 no  ) "<<endl;
+						cin>>resp2;
+						
+					} while (resp2 == 1);
 					
-					cout<<" Total en papas. L. "<<acumSubtRes<<endl;
+					break;
 					
-					cout<<" Desea comprar mas carne de res?  (1 si    2 no  ) "<<endl;
-					cin>>resp2;
+				case 4:
+					cout<<" regresando... "<<endl;
+					system ("pause");
+					system ("cls");
 					
-				} while (resp2 == 1);
-			
-				break;
-				
-			case 4:
-				cout<<" regresando... "<<endl;
-				system ("pause");
-				system ("cls");
-				
-				break;
-			}	
+					break;
+				}	
 			default:
-				cout<<" Error, ella no te quiere!.... "<<endl;
+						cout<<" Error, ella no te quiere!.... "<<endl;
 			}
 			
-		 while (  resp != 4 );
-		
-		
-		break;
+			while (  resp != 4 );
+			
+			
+			break;
 		case 3:
 			do{
 				cout<<"+++ L - l - Area de lacteos  ++++++++++"<<endl;
@@ -385,6 +466,7 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtQueso = lbrQueso * 30;
+						acumCantidadQueso+=lbrQueso;
 						cout<<" Subtotal L. "<<subtQueso<<endl;
 						//ACUMULADOR DE QUESO
 						acumSubtQueso = acumSubtQueso + subtQueso;
@@ -409,6 +491,7 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtQuesillo = lbrQuesillo * 40;
+						acumCantidadQuesillo+=lbrQuesillo;
 						cout<<" Subtotal L. "<<subtQuesillo<<endl;
 						//ACUMULADOR DE QUESILLO
 						acumSubtQuesillo = acumSubtQuesillo + subtQuesillo;
@@ -433,6 +516,7 @@ int main(int argc, char *argv[]) {
 						
 						//Proceso
 						subtMantequilla = lbrMantequilla * 50;
+						acumCantidadMantequilla+=lbrMantequilla;
 						cout<<" Subtotal L. "<<subtMantequilla<<endl;
 						//ACUMULADOR DE LIBRAS DE MANTEQUILLA
 						acumSubtMantequilla = acumSubtMantequilla + subtMantequilla;
@@ -453,7 +537,7 @@ int main(int argc, char *argv[]) {
 					
 					break;
 				}	
-			
+				
 			}
 			
 			while (  resp != 4 );
@@ -462,16 +546,136 @@ int main(int argc, char *argv[]) {
 			break;
 			
 		case 4:
-			cout<<"+++ C -c - Carrito compras    ++++++++++"<<endl;
+			cout<<"============== Revisar carrito de compras o generar factura ============="<<endl;
+			cout<<"============== |1| CARRITO DE COMPRAS ============="<<endl;
+			cout<<"============== |2| GENERAR FACTURA ============="<<endl;
 			
-			//opciones de ver los productos y facturar
+			cout<<"ELIGE: "<<endl;
+			cin>>resp;
+			system ("cls");
 			
-			break;	
+			switch (resp) {
+			case 1:
+				do{
+					
+					acumTotalgeneral = acumSubtMantequilla+acumSubtQuesillo+acumSubtQueso+acumSubtRes+acumSubtPollo+acumSubtCerdo+acumSubtPapas+acumSubtRepollos+acumSubtTomates;
+					
+					cout<<"=====================================================" << endl;
+					cout<<" =========== Carrito de compras ======= "<<endl;
+					cout<<"======================================================="<< endl;
+					cout<<"========= Gatos en area de verduras ============="<<endl;
+					cout << "" << endl;
+					if(acumCantidadTomates > 0){
+						cout << "	Libras de tomate: " << acumCantidadTomates << endl;
+						cout << "	Tomate: L." << acumSubtTomates << endl;
+					}
+					if(acumSubtRepollos > 0){
+						cout << "	Libras de Repollos: " << acumCantidadRepollos << endl;
+						cout << "	Repollos: L." << acumSubtRepollos  << endl;
+					}
+					if(acumCantidadPapas >0){
+						cout << "	Libras de Papas: " << acumCantidadPapas << endl;
+						cout << "	Papas: L." << acumSubtPapas << endl;
+					}
+					if(acumCantidadCerdo >0){
+						cout << "	Libras de Cerdo: " << acumCantidadTomates << endl;
+						cout << "	Cerdo: L." << acumSubtCerdo << endl;
+					}
+					if(acumCantidadPollo >0){
+						cout << "	Libras de Pollo: " << acumCantidadPollo << endl;
+						cout << "	Pollo: L." << acumSubtPollo << endl;
+					}
+					if(acumCantidadQueso >0){
+						cout << "	Libras de Queso: " << acumCantidadQueso << endl;
+						cout << "	Queso: L." << acumSubtQueso << endl;
+					}
+					if(acumCantidadQuesillo >0){
+						cout << "	Libras de Quesillo: " << acumCantidadQuesillo << endl;
+						cout << "	Quesillo: L." << acumSubtQuesillo << endl;
+					}
+					if(acumCantidadMantequilla >0){
+						cout << "	Libras de Mantequillo: " << acumCantidadMantequilla << endl;
+						cout << "	Mantequilla: L." << acumSubtMantequilla << endl;
+					}
+					
+					cout << "Total gastado " << acumTotalgeneral << endl;
+					
+					cout<<" Desea seguir comprando?  Si |1| - Regresar al menu anterior |2|  "<<endl;
+					cin>>resp;
+				}while(resp == 1);
+				
+				cout<<" regresando... "<<endl;
+				system ("cls");
+				
+				break;	
 
+			case 2:
+				if(tipoCliente==1){
+				tipoCliente_descuento=(0.15*acumTotalgeneral);
+				}
+				if(tipoCliente==2){
+					tipoCliente_descuento=(0.10*acumTotalgeneral);
+				}
+				if(tipoCliente==3){
+					tipoCliente_descuento=(0.5*acumTotalgeneral);
+				}
+				//descuentos en base a los dias
+				if(dia==1 or dia == 3){
+					descuento_dia=(acumTotalgeneral*0.3);
+					descuento_dia_categoria="VERDURAS";
+					
+				}
+				if(dia==2 or dia == 4){
+					descuento_dia=(acumTotalgeneral*0.3);
+					descuento_dia_categoria="CARNES";
+				}
+				if(dia==5 or dia == 6 or dia == 7){
+					descuento_dia=(acumTotalgeneral*0.3);
+					descuento_dia_categoria="LACTEOS";
+				}
+				
+				if(edad > 60 ){
+					descuento_edad=(0.25*acumTotalgeneral);
+				}
+				
+				total_ant_impuesto=(descuento_edad+tipoCliente_descuento+descuento_dia);
+				
+				impuesto=(0.15*total_ant_impuesto);
+				
+				total_pagar=(acumTotalgeneral-impuesto);
+				
+				cout << "__________________________________________________________________" << endl;
+				cout << "                      FACTURA DE SU COMPRA" << endl;
+				cout << "__________________________________________________________________" << endl;
+				cout << "                      DATOS DEL CLIENTE" << endl;
+				cout << " 	NOMBRE DEL CLIENTE................................. " << nombre << endl;
+				cout << " 	EDAD DEL CLIENTE.............................. " << edad << endl;
+				cout << " 	GENERO DEL CLIENTE................................. " << genero << endl;
+				cout << " 	TIPO DE CLIENTE....................................... " << tipoCliente << endl;
+				cout << "__________________________________________________________________" << endl;
+				cout << "                      PRODUCTOS COMPRADOS" << endl;
+				cout << " 	..........................................  " << endl  ;
+				
+				cout << "__________________________________________________________________" << endl;
+				cout << "                      SUBTOTAL" << endl;
+				cout << " 	TIPO DE CLIENTE (DESCUENTO).......................... L. " << tipoCliente_descuento<< "."<< endl;
+				cout << " 	METODO DE PAGO .......................... L. " << metodo_pago_string << "."  << endl;
+				
+				cout << " 	DESCUENTO DEL DIA......................................L." << descuento_dia << endl;
+				cout << " 	TOTAL ANTES DEL IMPUESTO.......................... L. " << total_ant_impuesto << endl;
+				cout << " 	IMPUESTO.......................................... L. " << impuesto << endl;
+				cout << "__________________________________________________________________" << endl;
+				cout << " 	TOTAL A PAGAR .................................... L. " << total_pagar << endl;
+				break;
+				
+				system ("pause");
+				system ("cls");
+			};
+			
 		};
 		
 		
-	} while (  area < 5 );
+	} while (  area < 4 );
 	
 	
 	
